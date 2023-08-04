@@ -1,0 +1,116 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0-windows7.0": {
+      "ProEssentials.Chart.Net60.Winforms/9.8.0.36": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-windows7.0/Gigasoft.ProEssentials.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/Gigasoft.ProEssentials.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      }
+    }
+  },
+  "libraries": {
+    "ProEssentials.Chart.Net60.Winforms/9.8.0.36": {
+      "sha512": "BfEkpXQ17TUtYO8KUcBujexovv4F14M5TO2yZiCDDLciTIQudZcv2eFpnk2v+g/KhfAWQUwb7RqS9OLQsJK3Fg==",
+      "type": "package",
+      "path": "proessentials.chart.net60.winforms/9.8.0.36",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "PE9LICENSE.txt",
+        "gigasoft-chart-logo-128-128.jpg",
+        "lib/net6.0-windows7.0/Gigasoft.ProEssentials.dll",
+        "lib/net6.0-windows7.0/Gigasoft.ProEssentials.xml",
+        "proessentials.chart.net60.winforms.9.8.0.36.nupkg.sha512",
+        "proessentials.chart.net60.winforms.nuspec",
+        "readme.md",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0-windows7.0": [
+      "ProEssentials.Chart.Net60.Winforms >= 9.8.0.36"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\User\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Dev\\C#\\Gigasoft_Chart\\chart_example3.csproj",
+      "projectName": "chart_example3",
+      "projectPath": "C:\\Dev\\C#\\Gigasoft_Chart\\chart_example3.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Dev\\C#\\Gigasoft_Chart\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0-windows"
+      ],
+      "sources": {
+        "C:\\ProEssentials9\\NuGet": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0-windows7.0": {
+        "targetAlias": "net6.0-windows",
+        "dependencies": {
+          "ProEssentials.Chart.Net60.Winforms": {
+            "target": "Package",
+            "version": "[9.8.0.36, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
