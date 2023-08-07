@@ -14,4 +14,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = chart_example3
-build_property.ProjectDir = c:\Dev\C#\Gigasoft_Chart\
+build_property.ProjectDir = C:\Dev\C#\Gigasoft_Chart\

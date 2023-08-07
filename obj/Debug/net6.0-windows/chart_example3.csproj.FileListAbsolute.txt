@@ -36,3 +36,4 @@ C:\Dev\C#\Gigasoft_Chart\obj\Debug\net6.0-windows\refint\chart_example3.dll
 C:\Dev\C#\Gigasoft_Chart\obj\Debug\net6.0-windows\chart_example3.pdb
 C:\Dev\C#\Gigasoft_Chart\obj\Debug\net6.0-windows\chart_example3.genruntimeconfig.cache
 C:\Dev\C#\Gigasoft_Chart\obj\Debug\net6.0-windows\ref\chart_example3.dll
+C:\Dev\C#\Gigasoft_Chart\obj\Debug\net6.0-windows\chart_example3.ContourPlot.resources

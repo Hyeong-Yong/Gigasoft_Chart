@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "U8Qmc+lJ1e6WYKPcnPqNcFW5geBst6y2MGrFS1ys5HUy1oSUcvgZMKbsC9uIUtOMJ9DVqgzigjZqKns+97iGVg==",
+  "dgSpecHash": "xHA2t0GV1APVTzuE382ZhurMWFkahweqHcFx8Znf3O1XEEGV8d+S0Zcw9dMsXh7qHsssWfh8yhDVdI8N4+POig==",
   "success": true,
-  "projectFilePath": "c:\\Dev\\C#\\Gigasoft_Chart\\chart_example3.csproj",
+  "projectFilePath": "C:\\Dev\\C#\\Gigasoft_Chart\\chart_example3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\proessentials.chart.net60.winforms\\9.8.0.36\\proessentials.chart.net60.winforms.9.8.0.36.nupkg.sha512"
   ],
