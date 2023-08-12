@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Chart/1.0.0": {
+        "dependencies": {
+          "ProEssentials.Chart.Net60.Winforms": "9.8.0.36"
+        },
+        "runtime": {
+          "Chart.dll": {}
+        }
+      },
+      "ProEssentials.Chart.Net60.Winforms/9.8.0.36": {
+        "runtime": {
+          "lib/net6.0-windows7.0/Gigasoft.ProEssentials.dll": {
+            "assemblyVersion": "9.8.0.36",
+            "fileVersion": "9.8.0.36"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Chart/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ProEssentials.Chart.Net60.Winforms/9.8.0.36": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BfEkpXQ17TUtYO8KUcBujexovv4F14M5TO2yZiCDDLciTIQudZcv2eFpnk2v+g/KhfAWQUwb7RqS9OLQsJK3Fg==",
+      "path": "proessentials.chart.net60.winforms/9.8.0.36",
+      "hashPath": "proessentials.chart.net60.winforms.9.8.0.36.nupkg.sha512"
+    }
+  }
+}

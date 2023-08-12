@@ -32,35 +32,44 @@
             pesgo1 = new Gigasoft.ProEssentials.Pesgo();
             timer1 = new System.Windows.Forms.Timer(components);
             timer2 = new System.Windows.Forms.Timer(components);
+            pe3do1 = new Gigasoft.ProEssentials.Pe3do();
             SuspendLayout();
             // 
             // pesgo1
             // 
-            pesgo1.Location = new Point(0, 0);
+            pesgo1.Location = new Point(845, 56);
             pesgo1.Name = "pesgo1";
-            pesgo1.Size = new Size(754, 455);
+            pesgo1.Size = new Size(372, 455);
             pesgo1.TabIndex = 0;
             pesgo1.Text = "pesgo1";
+            pesgo1.PeCustomTrackingDataText += pesgo1_PeCustomTrackingDataText;
             pesgo1.Click += pesgo1_Click;
             // 
-            // timer2
+            // timer1
             // 
-            timer1.Interval = 10;
             timer1.Tick += timer1_Tick;
             // 
-            // 
             // timer2
             // 
-            timer2.Interval = 100;
+            timer2.Interval = 3000;
             timer2.Tick += timer2_Tick;
+            // 
+            // pe3do1
+            // 
+            pe3do1.Location = new Point(58, 32);
+            pe3do1.Name = "pe3do1";
+            pe3do1.Size = new Size(687, 539);
+            pe3do1.TabIndex = 1;
+            pe3do1.Text = "pe3do1";
             // 
             // ContourPlot
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(pe3do1);
             Controls.Add(pesgo1);
             Name = "ContourPlot";
-            Size = new Size(754, 632);
+            Size = new Size(1350, 632);
             Load += Graph_Load;
             ResumeLayout(false);
         }
@@ -70,5 +79,6 @@
         private Gigasoft.ProEssentials.Pesgo pesgo1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
+        private Gigasoft.ProEssentials.Pe3do pe3do1;
     }
 }

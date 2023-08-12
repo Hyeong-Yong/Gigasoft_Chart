@@ -51,9 +51,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Dev\\C#\\Gigasoft_Chart\\chart_example3.csproj",
-      "projectName": "chart_example3",
-      "projectPath": "C:\\Dev\\C#\\Gigasoft_Chart\\chart_example3.csproj",
+      "projectUniqueName": "C:\\Dev\\C#\\Gigasoft_Chart\\Chart.csproj",
+      "projectName": "Chart",
+      "projectPath": "C:\\Dev\\C#\\Gigasoft_Chart\\Chart.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
       "outputPath": "C:\\Dev\\C#\\Gigasoft_Chart\\obj\\",
       "projectStyle": "PackageReference",
