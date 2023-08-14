@@ -91,7 +91,7 @@ namespace chart_example3
             int number_y, number_x, frame_size;
 
             number_x = Convert.ToInt32(length_x / interval_x) + 1;
-            number_y = Convert.ToInt32(length_y / interval_y)+1;
+            number_y = Convert.ToInt32(length_y / interval_y) + 1;
             frame_size = number_x * number_y;
         }
 
@@ -350,8 +350,23 @@ namespace chart_example3
 
             if (pe3do1 == null) { return; }
 
+
+
+            int length_x = Math.Abs(start_x - end_x);
+            int length_y = Math.Abs(start_y - end_y);
+            int number_y, number_x, frame_size;
+
+            number_x = Convert.ToInt32(length_x / interval_x) + 1;
+            number_y = Convert.ToInt32(length_y / interval_y) + 1;
+            frame_size = number_x * number_y;
+
+            if (THz_values.Count > frame_size) { return; }
+
+
             pe3do1.PeFunction.Reset();
             pe3do1.PeUserInterface.Dialog.ModelessAutoClose = true;
+
+
 
 
             // Tip, for charts with large amounts of data, (you may need to set HourGlassThreshold property smaller than 2M)
@@ -398,19 +413,9 @@ namespace chart_example3
             // Pass Data //
             //pe3do1.PeGrid.Configure.XAxisScaleControl = Gigasoft.ProEssentials.Enums.ScaleControl.Log;
             pe3do1.PeString.XAxisLabel = "X axis [mm]";
-            pe3do1.PeString.ZAxisLabel = "Y axis [mm]";
+            pe3do1.PeString.YAxisLabel = "Y axis [mm]";
+            pe3do1.PeString.ZAxisLabel = "Z axis [mm]";
 
-
-
-            int length_x = Math.Abs(start_x - end_x);
-            int length_y = Math.Abs(start_y - end_y);
-            int number_y, number_x, frame_size;
-
-            number_x = Convert.ToInt32(length_x  / interval_x) + 1;
-            number_y = Convert.ToInt32(length_y / interval_y) + 1;
-            frame_size = number_x * number_y;
-
-            if (THz_values.Count > frame_size) { return; }
 
             float[] pMyXData = new float[frame_size];
             float[] pMyYData = new float[frame_size];
@@ -427,13 +432,14 @@ namespace chart_example3
                     float position_x = (float)(x * interval_x);
                     pMyXData[index] = position_x;
 
+                    
                     float position_y = (float)(y * interval_y);
-                    pMyYData[index] = position_y;
-
+                    pMyZData[index] = position_y;
+                    
                     if (THz_values.Count > index)
                     {
                         float f = (float)(THz_values[index] + index);
-                        pMyZData[index] = f;
+                        pMyYData[index] = f;
                     }
                 }
             }
@@ -609,6 +615,18 @@ namespace chart_example3
 
             if (pe3do1 == null) { return; }
 
+
+            int length_x = Math.Abs(start_x - end_x);
+            int length_y = Math.Abs(start_y - end_y);
+            int number_y, number_x, frame_size;
+
+            number_x = Convert.ToInt32(length_x / interval_x) + 1;
+            number_y = Convert.ToInt32(length_y / interval_y) + 1;
+            frame_size = number_x * number_y;
+
+            if (THz_values.Count > frame_size) { return; }
+
+
             pe3do1.PeFunction.Reset();
             pe3do1.PeUserInterface.Dialog.ModelessAutoClose = true;
 
@@ -658,18 +676,8 @@ namespace chart_example3
             //pe3do1.PeGrid.Configure.XAxisScaleControl = Gigasoft.ProEssentials.Enums.ScaleControl.Log;
             pe3do1.PeString.XAxisLabel = "X axis [mm]";
             pe3do1.PeString.ZAxisLabel = "Y axis [mm]";
-            pe3do1.PeString.ZAxisLabel = "THz phase";
+            pe3do1.PeString.YAxisLabel = "THz phase";
 
-
-            int length_x = Math.Abs(start_x - end_x);
-            int length_y = Math.Abs(start_y - end_y);
-            int number_y, number_x, frame_size;
-
-            number_x = Convert.ToInt32(length_x / interval_x) + 1;
-            number_y = Convert.ToInt32(length_y / interval_y)+1;
-            frame_size = number_x * number_y;
-
-            if (THz_values.Count > frame_size) { return; }
 
             float[] pMyXData = new float[frame_size];
             float[] pMyYData = new float[frame_size];
@@ -687,12 +695,12 @@ namespace chart_example3
                     pMyXData[index] = position_x;
 
                     float position_y = (float)(y * interval_y);
-                    pMyYData[index] = position_y;
+                    pMyZData[index] = position_y;
 
                     if (THz_values.Count > index)
                     {
                         float f = (float)(THz_values[index]);
-                        pMyZData[index] = f;
+                        pMyYData[index] = f;
                     }
                 }
             }
@@ -724,8 +732,8 @@ namespace chart_example3
             pe3do1.PeColor.ContourColorBlends = 0;  // this must be set before COLORSET, COLORSET ALWAYS LAST 
             pe3do1.PeColor.ContourColorSet = ContourColorSet.BlueCyanGreenYellowBrownWhite;
 
-            pe3do1.PePlot.Option.ShowContour = ShowContour.BottomLines;
-            pe3do1.PePlot.Option.ShowWireFrame = true;
+            pe3do1.PePlot.Option.ShowContour = ShowContour.None;
+            pe3do1.PePlot.Option.ShowWireFrame = false;
             pe3do1.PeColor.BarBorderColor = Color.FromArgb(85, 0, 0, 0);
 
             pe3do1.PeGrid.Configure.AutoMinMaxPadding = 0;
@@ -735,8 +743,8 @@ namespace chart_example3
             // Set various other properties //
             pe3do1.PeFont.Fixed = true;
 
-            pe3do1.PeString.MainTitle = "";
-            pe3do1.PeString.SubTitle = "||Mouse Wheel zooms. Mouse Drag rotates. Mouse Drag+SHIFT shifts image. ";
+            pe3do1.PeString.MainTitle = "THz Phase";
+            //pe3do1.PeString.SubTitle = "||Mouse Wheel zooms. Mouse Drag rotates. Mouse Drag+SHIFT shifts image. ";
             //pe3do1.PeString.MultiSubTitles[0] = "||Double Click start/stop Rotation. Mouse Drag+MIDDLE rotates light. ";
 
             pe3do1.PeConfigure.RenderEngine = RenderEngine.Direct3D;
@@ -830,7 +838,7 @@ namespace chart_example3
             pe3do1.PeUserInterface.Menu.CustomMenuText[0] = "Zoom Rotate on Center ";
             pe3do1.PeUserInterface.Menu.CustomMenuState[0, 0] = CustomMenuState.Checked;
             pe3do1.PeUserInterface.Menu.CustomMenuLocation[0] = CustomMenuLocation.AboveSeparator;
-            pe3do1.PeString.MultiSubTitles[1] = "Key 0-9 rotates/zooms at annotation| |Popup Menu size/hide annotation text.";
+            //pe3do1.PeString.MultiSubTitles[1] = "Key 0-9 rotates/zooms at annotation| |Popup Menu size/hide annotation text.";
 
             // Set a default ViewingAt location.
             float X, Y, Z;
@@ -878,14 +886,14 @@ namespace chart_example3
         private void timer1_Tick(object sender, EventArgs e)
         {
             Random random = new Random();
-            double value = random.Next(1, 100);
+            double value = random.Next(8, 10);
             trigger_signal_queue.Enqueue(value);
         }
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            UpdateContourPlot(trigger_signal_queue, 0, 10, 0, 10, 1, 1);
-            UpdateContour3DWirePlot(trigger_signal_queue, 0, 10, 0, 10, 1, 1);
+            UpdateContourPlot(trigger_signal_queue, 0, 50, 0, 50, 1, 1);
+            UpdateContour3DPlot(trigger_signal_queue, 0, 50, 0, 50, 1, 1);
 
         }
 
@@ -898,6 +906,9 @@ namespace chart_example3
 
         }
 
-
+        private void btn_3DPlot_Click(object sender, EventArgs e)
+        {
+            UpdateContour3DPlot(trigger_signal_queue, 0, 50, 0, 50, 1, 1);
+        }
     }
 }

@@ -33,6 +33,7 @@
             timer1 = new System.Windows.Forms.Timer(components);
             timer2 = new System.Windows.Forms.Timer(components);
             pe3do1 = new Gigasoft.ProEssentials.Pe3do();
+            btn_3DPlot = new Button();
             SuspendLayout();
             // 
             // pesgo1
@@ -62,10 +63,21 @@
             pe3do1.TabIndex = 1;
             pe3do1.Text = "pe3do1";
             // 
+            // btn_3DPlot
+            // 
+            btn_3DPlot.Location = new Point(620, 577);
+            btn_3DPlot.Name = "btn_3DPlot";
+            btn_3DPlot.Size = new Size(94, 29);
+            btn_3DPlot.TabIndex = 2;
+            btn_3DPlot.Text = "LOAD";
+            btn_3DPlot.UseVisualStyleBackColor = true;
+            btn_3DPlot.Click += btn_3DPlot_Click;
+            // 
             // ContourPlot
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btn_3DPlot);
             Controls.Add(pe3do1);
             Controls.Add(pesgo1);
             Name = "ContourPlot";
@@ -80,5 +92,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
         private Gigasoft.ProEssentials.Pe3do pe3do1;
+        private Button btn_3DPlot;
     }
 }
