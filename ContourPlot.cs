@@ -21,7 +21,7 @@ namespace chart_example3
         public delegate void delEvent(object sender, EventArgs e);
         public event delEvent contourPlotEventSender;
 
-        Queue<double> trigger_signal_queue = new Queue<double>();
+        //Queue<double> trigger_signal_queue = new Queue<double>();
 
         struct PositionInformation
         {
@@ -44,8 +44,17 @@ namespace chart_example3
 
         public void Graph_Load(object sender, EventArgs e)
         {
-            timer1.Start();
-            timer2.Start();
+            Queue<double> data = new Queue<double>();
+            int i = 0;
+            int j = 15;
+            while (data.Count < (j+1)*(j+1))
+            {
+                i++;
+                data.Enqueue(Math.Pow(i,2));
+            }
+
+
+            UpdateContour3DPlot(data, 0, j, 0, j, 1, 1);
         }
 
         private List<double> THz_values = new List<double>();
@@ -634,8 +643,6 @@ namespace chart_example3
             // Tip, for charts with large amounts of data, (you may need to set HourGlassThreshold property smaller than 2M)
             // if you see the Wait Cursor flash twice in a row, you are un-necessarily building polygons twice. 
 
-            Random Rand_Num = new Random(unchecked((int)DateTime.Now.Ticks));
-
 
             // Enable smooth rotating and zooming //
             pe3do1.PeUserInterface.Scrollbar.ScrollSmoothness = 4;  // v9.5
@@ -700,7 +707,7 @@ namespace chart_example3
                     if (THz_values.Count > index)
                     {
                         float f = (float)(THz_values[index]);
-                        pMyYData[index] = f;
+                        pMyYData[index] = 1;
                     }
                 }
             }
@@ -885,21 +892,12 @@ namespace chart_example3
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Random random = new Random();
-            double value = random.Next(8, 10);
-            trigger_signal_queue.Enqueue(value);
         }
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            UpdateContourPlot(trigger_signal_queue, 0, 50, 0, 50, 1, 1);
-            UpdateContour3DPlot(trigger_signal_queue, 0, 50, 0, 50, 1, 1);
 
         }
-
-
-
-
 
         private void pesgo1_Click(object sender, EventArgs e)
         {
@@ -908,7 +906,7 @@ namespace chart_example3
 
         private void btn_3DPlot_Click(object sender, EventArgs e)
         {
-            UpdateContour3DPlot(trigger_signal_queue, 0, 50, 0, 50, 1, 1);
+            //UpdateContour3DPlot(trigger_signal_queue, 0, 50, 0, 50, 1, 1);
         }
     }
 }
