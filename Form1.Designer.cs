@@ -33,16 +33,16 @@
             // 
             // contourPlot1
             // 
-            contourPlot1.Location = new Point(36, 12);
+            contourPlot1.Location = new Point(-18, 35);
             contourPlot1.Name = "contourPlot1";
-            contourPlot1.Size = new Size(752, 790);
+            contourPlot1.Size = new Size(1688, 790);
             contourPlot1.TabIndex = 0;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1005, 521);
+            ClientSize = new Size(1075, 604);
             Controls.Add(contourPlot1);
             Name = "Form1";
             Text = "Form1";
@@ -51,6 +51,7 @@
         }
 
         #endregion
+
         private ContourPlot contourPlot1;
     }
 }

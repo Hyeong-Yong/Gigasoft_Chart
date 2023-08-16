@@ -46,11 +46,11 @@ namespace chart_example3
         {
             Queue<double> data = new Queue<double>();
             int i = 0;
-            int j = 15;
+            int j = 10;
             while (data.Count < (j+1)*(j+1))
             {
                 i++;
-                data.Enqueue(Math.Pow(i,2));
+                data.Enqueue(Math.Pow(i,2)*Math.Sin(i));
             }
 
 
@@ -699,23 +699,23 @@ namespace chart_example3
                     index = number_x * y + x;
 
                     float position_x = (float)(x * interval_x);
-                    pMyXData[index] = position_x;
+                    pMyXData[index] = position_x+1;
 
                     float position_y = (float)(y * interval_y);
-                    pMyZData[index] = position_y;
+                    pMyZData[index] = position_y+1;
 
                     if (THz_values.Count > index)
                     {
                         float f = (float)(THz_values[index]);
-                        pMyYData[index] = 1;
+                        pMyYData[index] = f;
                     }
                 }
             }
 
-            pesgo1.PeData.NullDataValueZ = 0.0F;
+            pe3do1.PeData.NullDataValueZ = 0.0F;
 
-            pesgo1.PeData.Subsets = number_y; // y
-            pesgo1.PeData.Points = number_x; //x
+            pe3do1.PeData.Subsets = number_y; // y
+            pe3do1.PeData.Points = number_x; //x
 
             // Perform the transfer of data //
             Gigasoft.ProEssentials.Api.PEvsetW(pe3do1.PeSpecial.HObject, Gigasoft.ProEssentials.DllProperties.XData, pMyXData, frame_size);
